@@ -1,0 +1,584 @@
+/* grid  auto is shy, but fr is greedy
+auto takes space depending on the content
+but fraction takes left space all of it even if content is small */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* FONT */
+
+@font-face {
+  font-family: Mulish-light;
+  src: url(../fonts/Mulish-Light.ttf);
+}
+@font-face {
+  font-family: Mulish-Bold;
+  src: url(../fonts/Mulish-Bold.ttf);
+}
+@font-face {
+  font-family: Mulish-Regular;
+  src: url(../fonts/Mulish-Regular.ttf);
+}
+@font-face {
+  font-family: Mulish-Medium;
+  src: url(../fonts/Mulish-Medium.ttf);
+}
+
+/*_________________ GENERAL_________________ */
+/*(used a lot so we do one style to it */
+
+html {
+  font-family: Mulish-light;
+  font-size: 16px; /* all rem is based on this
+  and font size, padding, margin are rem cuz they change
+  width and height only pixel
+  left and etc are percentages for translates*/
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+
+.Secondary-button {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; 
+  To center everything*/
+  border: 1.5px solid #458ff6;
+  background-color: transparent;
+  border-radius: 55px;
+  width: 200px;
+  height: 60px;
+  font-size: 1.125rem;
+  font-family: Mulish-Bold;
+  cursor: pointer;
+  color: #458ff6;
+}
+
+.primary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid #458ff6;
+  background-color: #458ff6;
+  border-radius: 55px;
+  width: 200px;
+  height: 60px;
+  font-size: 1.125rem;
+  font-family: Mulish-Light;
+  cursor: pointer;
+  color: white;
+}
+.Secondary-button:hover {
+  background-color: #458ff6;
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: white;
+  color: black;
+}
+/* _________________ NAV-BAR  _________________*/
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 20px; /* 2rem */
+}
+
+.nav-bar ul {
+  list-style-type: none;
+}
+
+.nav-bar ul li {
+  display: inline-block; /* to be gnb b3d */
+  margin-inline-end: 24px /*(2.5rem)*/;
+}
+
+.nav-bar ul li:last-child {
+  margin-inline-end: 0;
+}
+
+.nav-bar ul li a {
+  font-size: 18px;
+  font-family: Mulish-Medium;
+  color: #1f1534;
+  opacity: 0.5;
+}
+
+.nav-bar ul li a.active,
+hover {
+  /* as has class active */
+  opacity: 1;
+  font-family: Mulish-Bold;
+}
+
+/* _________________ OUR SERVICES _________________  */
+
+.our-services {
+  padding-block: 4rem;
+  background-image: url(../images/framee.svg);
+  background-position: left top -50px;
+  background-repeat: no-repeat;
+  /* height: 100vh; */
+}
+
+.our-services .head-services {
+  text-align: center;
+  margin-inline: auto;
+  /* width: 952px;
+  height: 177px; */
+  /* width and height wont be responsive */
+  max-width: 85%;
+}
+
+.our-services .head-services h3 {
+  font-size: 2.25rem;
+  font-family: Mulish-Medium;
+  position: relative;
+}
+
+.our-services .head-services h3::after {
+  /* the smalll ine*/
+  content: "";
+  position: absolute; /*works with relative only
+   which is in H3 which means absolute has limit of relative element can't go past it
+   after to add the line right after h3*/
+  background-color: black;
+  border-radius: 0.3125rem; /*5px*/
+  left: 50%;
+  bottom: -1rem;
+  transform: translateX(-50%); /*to center exaclty*/
+  width: 56px;
+  height: 2px;
+}
+
+.our-services .head-services p {
+  margin-top: 2.5rem;
+  margin-inline: auto;
+  text-align: center;
+  width: 59%; /*90% from the 60%*/
+  color: #7d7987;
+  font-size: 1.125rem;
+  line-height: 1.875;
+  padding-block: 1rem;
+  margin-bottom: 1rem;
+}
+
+.our-services .body-services {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.our-services .body-services .card-services {
+  background-color: #ffffff;
+
+  margin-inline: 1rem;
+  padding: 1.5rem;
+  box-shadow: 10px 40px 50px 0px #e5e9f666;
+  border-radius: 1.25rem;
+  width: calc((100% / 3) - 2 * 1rem - 2 * 1.5rem);
+  margin-bottom: 1rem;
+  max-width: 30%;
+}
+
+.our-services .body-services .card-services img {
+  max-height: 71px;
+  width: auto;
+}
+
+.our-services .body-services .card-services h5 {
+  font-family: Mulish-Bold;
+  font-size: 1.5rem;
+  margin-block: 1rem;
+}
+
+.our-services .body-services .card-services p {
+  color: #7d7987;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+.our-services .services-button {
+  margin: 2rem auto;
+}
+
+/* _________________ CONSULTATION  _________________*/
+
+.consult-Section {
+  background-image: url(../images/tttt.svg);
+  background-repeat: no-repeat;
+  background-position: top left -5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem;
+  margin-bottom: 5rem;
+  margin-left: 0px; /* CHECK IF ITS RIGHT OR NOT*/
+}
+.consult-Section .consult-Main {
+  width: 30%;
+  margin-inline-end: auto;
+  margin-left: auto;
+}
+.consult-Section .consult-Main h3 {
+  font-family: Mulish-Bold;
+  font-size: 2.8rem;
+  margin-block: auto;
+}
+
+.consult-Section p {
+  color: #7d7987;
+  line-height: 1.5rem;
+  padding-block: 1rem;
+  font-size: 1.25rem;
+}
+
+.consult-Section .consult-btn {
+  margin-block: 1rem;
+}
+.consult-Section .consult-img {
+  width: 50%;
+  position: relative;
+  left: 10%;
+  margin-inline: 0;
+}
+
+/*_________________ FEATURES  _________________ */
+
+.features {
+  background-image: url(../images/yooo.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.features p {
+  margin-block: 2rem;
+  color: #7d7987;
+  max-width: 55%;
+}
+.features h3 {
+  font-family: Mulish-Bold;
+  font-size: 2.2rem;
+  padding-block: 1rem;
+  position: relative;
+  max-width: 60%;
+}
+
+.features .features-img {
+  width: 80%;
+  margin-inline-end: 10rem;
+}
+
+/* _________________ FIRST FEATURE _________________  */
+
+.features .feature1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.features .feature1 .feature-main h3::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  border-radius: 0.625rem;
+  width: 56px;
+  height: 2px;
+  left: 0%;
+  transform: translateX(0%);
+  bottom: -0.5rem;
+}
+
+/* _________________ SECOND FEATURE _________________  */
+
+.features .feature2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.features .feature2 .feature-img {
+  margin-inline-end: 3rem;
+}
+
+.features .feature2 .feature-main2 h3::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  border-radius: 0.625rem;
+  width: 56px;
+  height: 2px;
+  left: 0%;
+  transform: translateX(0%);
+  bottom: -0.5rem;
+}
+
+/* ________________REVIEWS____________________ */
+
+.reviews {
+  position: relative;
+  background-image: url(../images/Group.svg);
+  background-image: url(../images/Group.svg),
+    linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  border-radius: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 50%;
+  height: auto;
+  color: white;
+  padding: 3rem;
+  margin-top: 4rem;
+}
+/* ______NEED help with svg images behind review card___________  */
+.reviews h4 {
+  background-image: url(../images/Group.svg);
+  background-repeat: no-repeat;
+  background-position: top right 50px;
+  grid-column: 1 / 7;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.reviews h4::after {
+  /* the smalll ine*/
+  content: "";
+  position: absolute; /*works with relative only
+  which is in H3 which means absolute has limit of relative element can't go past it
+  after to add the line right after h3*/
+  background-color: white;
+  border-radius: 0.3125rem; /*5px*/
+  left: 50%;
+  bottom: -1rem;
+  transform: translateX(-50%); /*to center exaclty*/
+  width: 56px;
+  height: 2px;
+}
+
+.reviews .reviewCard {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* grid-template-rows: auto 1fr; */
+}
+
+.reviews .reviewCard .reviewLeft img {
+  position: relative;
+  bottom: 10%;
+  transform: translateY(-10%);
+  border-radius: 70%;
+  padding: 1rem;
+}
+
+.reviews .imgDesc {
+  display: grid;
+  grid-column: 2 / 5;
+  grid-row: 1/1;
+}
+
+.reviews .imgDesc h5 {
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-block: 0;
+}
+
+.reviews .reviewCard .loneP {
+  grid-column: 5 / 9;
+  max-width: 80%;
+}
+
+.nav-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-block: 4rem;
+}
+
+.reviewYoo {
+  position: absolute;
+  left: -50px;
+  bottom: 10px;
+  z-index: 1;
+}
+
+/* _________________ARTICLE CARDS_________________ */
+
+.articleAll > h2 {
+  margin-top: 6rem;
+  padding-block: 2rem;
+  text-align: center;
+  position: relative;
+}
+.articleAll h2::after {
+  /* the smalll ine*/
+  content: "";
+  position: absolute; /*works with relative only
+  which is in H3 which means absolute has limit of relative element can't go past it
+  after to add the line right after h3*/
+  background-color: black;
+  border-radius: 0.3125rem; /*5px*/
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+
+  width: 56px;
+  height: 2px;
+}
+.article {
+  display: flex;
+  position: relative;
+  background-image: url(../images/elementttt.svg);
+  background-repeat: no-repeat;
+  background-position: top left 20px;
+  z-index: -1;
+}
+.article .card {
+  max-width: 30%;
+  margin-inline: 5rem;
+  margin-block: 2rem;
+  background-color: white;
+  box-shadow: 10px 40px 50px 0px #e5e9f666;
+  box-sizing: border-box;
+}
+
+.article .card h4 {
+  max-width: 60%;
+  line-height: 1.8rem;
+  font-family: Mulish-bold;
+  font-size: 1.1rem;
+  text-align: left;
+  padding-block: 0.8rem;
+}
+
+.article .card p {
+  max-width: 70;
+  font-size: 1rem;
+  color: #7d7987;
+  text-align: left;
+  line-height: 1.5rem;
+  padding-block: 1rem;
+}
+
+.article .card a {
+  text-decoration: none;
+  color: #4089ed;
+}
+
+.card-btn {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-block: 1rem;
+}
+
+/* _________________FOOTER_________________ */
+
+footer {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: repeat(3, auto);
+  padding: 2rem;
+  padding-block: 4rem;
+  background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  /*____  BG IMG AND GRADIENT  ____  CANT DO RIGHT FOOTER IMAGE*/
+  background-image: url("../images/left\ footer.svg"); /* fallback */
+  background-image: url("../images/left\ footer.svg"),
+    linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%); /* W3C */
+  background-repeat: no-repeat;
+  background-position: bottom -15px left -5px;
+}
+
+.footerLeft {
+  margin-inline-end: 0;
+  padding-inline-end: 0;
+}
+
+footer h1 {
+  color: #5b9bf3;
+  margin-inline-end: 0.5rem;
+  margin-block: 0;
+  background-image: url(../images/Ellipse\ 8.svg);
+  background-repeat: no-repeat;
+  background-position: top 50% left 50%;
+  padding: 1rem;
+}
+
+footer p {
+  color: white;
+  max-width: 50%;
+  line-height: 1.5rem;
+  padding-block-end: 1rem;
+  font-family: Mulish-Light;
+  font-size: 1rem;
+  text-wrap: wrap;
+}
+
+footer span {
+  color: white;
+  font-size: 1rem;
+  margin-block: 2rem;
+}
+footer .logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-inline-end: 1rem;
+}
+
+footer .footerUL {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  justify-items: start;
+}
+
+footer ul {
+  /* grid-column: 6/12;
+  grid-row: 1 / 3; */
+  color: white;
+  font-family: Mulish-Light;
+  text-decoration: none;
+}
+
+footer li {
+  list-style-type: none;
+  color: white;
+  font-family: Mulish-Light;
+  margin-inline-end: 4rem;
+  padding-inline: 2rem;
+  padding-block: 0.3rem;
+}
+
+footer .footerUL .firstLi {
+  font-family: Mulish-Bold;
+  font-size: 1.1rem;
+  color: white;
+  margin-block: 1rem;
+}
+/* _________________RESPONSIVE_________________ */
+@media (max-width: 991px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 441px) {
+  html {
+    font-size: 10px;
+  }
+}
